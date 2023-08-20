@@ -36,7 +36,7 @@ const ImageUpload: React.FunctionComponent<ImageUploadProps> = ({
       {({ open }) => {
         return (
           <div
-            onClick={() => open?.()} // to avoid error
+            onClick={() => open?.()} // protection against errors if open isn't defined
             className="
               relative
               cursor-pointer
