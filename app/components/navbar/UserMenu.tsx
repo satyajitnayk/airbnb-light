@@ -32,7 +32,7 @@ const UserMenu: React.FunctionComponent<UserMenuProps> = ({ currentUser }) => {
     }
 
     rentModal.onOpen();
-  }, [currentUser, loginModal]);
+  }, [currentUser, loginModal, rentModal]);
 
   return (
     <div className="relative">
