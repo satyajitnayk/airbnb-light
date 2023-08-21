@@ -8,11 +8,11 @@ import React, { useCallback, useState } from 'react';
 import useRegisterModal from '@/app/hooks/useRegisterModal';
 import useLoginModal from '@/app/hooks/useLoginModal';
 import { signOut } from 'next-auth/react';
-import { Safeuser } from '@/app/types';
+import { SafeUser } from '@/app/types';
 import useRentModal from '@/app/hooks/useRentModal';
 
 interface UserMenuProps {
-  currentUser?: Safeuser | null;
+  currentUser?: SafeUser | null;
 }
 
 const UserMenu: React.FunctionComponent<UserMenuProps> = ({ currentUser }) => {
