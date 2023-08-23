@@ -1,12 +1,20 @@
+// reason for below line https://github.com/vercel/next.js/issues/49182#issuecomment-1645780432
+export const dynamic = 'force-dynamic';
+
 import ClientOnly from './components/ClientOnly';
 import Container from './components/Container';
 import EmptyState from './components/EmptyState';
-import getListings from './actions/getListings';
 import ListingCard from './components/listings/ListingCard';
+
+import getListings, { IListingsParams } from './actions/getListings';
 import getCurrentUser from './actions/getCurrentUser';
 
-export default async function Home() {
-  const listings = (await getListings()) || [];
+interface HomeProps {
+  searchParams: IListingsParams;
+}
+
+const Home = async ({ searchParams }: HomeProps) => {
+  const listings = (await getListings(searchParams)) || [];
   const currentUser = await getCurrentUser();
 
   if (listings.length === 0) {
@@ -45,4 +53,6 @@ export default async function Home() {
       </Container>
     </ClientOnly>
   );
-}
+};
+
+export default Home;
