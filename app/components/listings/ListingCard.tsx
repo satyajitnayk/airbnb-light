@@ -30,9 +30,9 @@ const ListingCard: React.FunctionComponent<ListingCardProps> = ({
   reservation,
 }) => {
   const router = useRouter();
-  const { getByValues } = useCountries();
+  const { getByValue } = useCountries();
 
-  const location = getByValues(data.locationValue);
+  const location = getByValue(data.locationValue);
 
   const handleCancel = useCallback(
     (e: React.MouseEvent<HTMLButtonElement>) => {

@@ -21,9 +21,9 @@ const ListingHead: React.FunctionComponent<ListingHeadProps> = ({
   title,
   currentUser,
 }) => {
-  const { getByValues } = useCountries();
+  const { getByValue } = useCountries();
 
-  const location = getByValues(locationValue);
+  const location = getByValue(locationValue);
 
   return (
     <>

@@ -34,9 +34,9 @@ const ListingInfo: React.FunctionComponent<ListingInfoProps> = ({
   roomCount,
   user,
 }) => {
-  const { getByValues } = useCountries();
+  const { getByValue } = useCountries();
 
-  const coordinates = getByValues(locationValue)?.latlng;
+  const coordinates = getByValue(locationValue)?.latlng;
 
   return (
     <div className="col-span-4 flex flex-col gap-8">
